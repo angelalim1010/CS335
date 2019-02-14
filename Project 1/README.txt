@@ -21,5 +21,5 @@ To run with a given file that is redirected to standard input:
 What I have completed:
 I. All parts of the assignment were completed
 The outputs match the expected outputs
-II. No additional instructions are necessary
-III. A bug I had was that for the one parameter constructor I didn't define size so it was in an infinite loop.
+II. A bug I had was that for the one parameter constructor I didn't define size so it was in an infinite loop.
+III. No additional instructions are necessary
