@@ -178,9 +178,10 @@ class Points2 {
 				return out;
    }
    for(size_t i = 0; i < some_points2.size(); i++){
-     out << "("<< some_points2.sequence_[i][0] << ", " << some_points2.sequence_[i][1] << ")" << std::endl;
+     out << "("<< some_points2.sequence_[i][0] << ", " << some_points2.sequence_[i][1] << ")";
 
    }
+   out << std::endl;
     return out;
  }
 
