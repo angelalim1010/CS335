@@ -18,6 +18,6 @@ To run with a given file that is redirected to standard input:
 
 ./test_points2 < test_input_file.txt
 
-##### What I have completed:
+What I have completed:
 I've completed the implementing the Big 5 and the overloading operators
 The outputs match the expected outputs
