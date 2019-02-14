@@ -22,4 +22,5 @@ What I have completed:
 I. All parts of the assignment were completed
 The outputs match the expected outputs
 II. A bug I had was that for the one parameter constructor I didn't define size so it was in an infinite loop.
-III. No additional instructions are necessary
+III. No additional instructions are necessary but since there's an test_input_file.txt, I would run the program with:
+ ./test_points2 < test_input_file.txt
