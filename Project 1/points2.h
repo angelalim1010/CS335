@@ -1,5 +1,10 @@
-// --> YOUR NAME here
-// Few comments describing the class Points2
+// Name: Angela Lim
+/*
+Points2 is a class that has 2 private member variables
+@sequence_ (a pointer that points to a 2d array)
+@size_ (size of the sequence)
+This class will be implementing the "Big 5" and Overloading the + and [] operators
+*/
 
 #ifndef CSCI335_HOMEWORK1_POINTS2_H_
 #define CSCI335_HOMEWORK1_POINTS2_H_
@@ -11,8 +16,11 @@
 #include <sstream>
 
 namespace teaching_project {
-// Place comments that provide a brief explanation of the class,
-// and its sample usage.
+  // Points2 is a class that has 2 private member variables
+  // @sequence_ (a pointer that points to a 2d array)
+  // @size_ (size of the sequence)
+  //Implementing constructor, destructor, copy constructor, move and swap
+  //This class will also return the addition of sequences using the + operator
 template<typename Object>
 class Points2 {
  public:
@@ -27,7 +35,6 @@ class Points2 {
   // Copy-constructor.
   Points2(const Points2 &rhs){
     size_ = rhs.size_;
-    sequence_ = rhs.sequence_;
     sequence_ = new std::array<Object, 2> [size_];
     for(size_t i = 0; i < size_; i++){
       sequence_[i][0] = rhs.sequence_[i][0];
@@ -37,14 +44,7 @@ class Points2 {
 
   }
 
-  // Copy-assignment. If you have already written
-  // the copy-constructor and the move-constructor
-  // you can just use:
-  // {
-  // Points2 copy = rhs;
-  // std::swap(*this, copy);
-  // return *this;
-  // }
+  // Copy-assignment.
   Points2& operator=(const Points2 &rhs){
 
     Points2 copy = rhs;
@@ -63,14 +63,11 @@ class Points2 {
   // Move-assignment.
   // Just use std::swap() for all variables.
   Points2& operator=(Points2 &&rhs){
-    // if(this == &rhs){
-    //   return *this;
-    // }
     std::swap(size_, rhs.size_);
     std::swap(sequence_, rhs.sequence_);
     return *this;
   }
-
+//destructor
   ~Points2(){
     sequence_ = nullptr;
     delete[] sequence_;
@@ -80,16 +77,15 @@ class Points2 {
 
   // One parameter constructor.
   Points2(const std::array<Object, 2>& item) {
-    // Provide code.
-   sequence_ = new std::array<Object, 2> [size_];
-   sequence_[0][0] = item[0];
-   sequence_[0][1] = item[1];
+    size_ = 1;
+    sequence_ = new std::array<Object, 2> [size_];
+    sequence_[0][0] = item[0];
+    sequence_[0][1] = item[1];
 
   }
 
   // Read a chain from standard input.
   void ReadPoints2() {
-    // Part of code included (without error checking).
     std::string input_line;
     std::getline(std::cin, input_line);
     std::stringstream input_stream(input_line);
@@ -98,23 +94,21 @@ class Points2 {
     int size_of_sequence;
     input_stream >> size_of_sequence;
     // Allocate space for sequence.
-    // Add code here.
     size_ = size_of_sequence;
     sequence_ = new std::array<Object,2>[size_];
 
     Object token;
     for (int i = 0 ;input_stream >> token; ++i) {
       // Read coordinates.
-      // Fill sequence_ here.
+      // Fill sequence_
       sequence_[i][0] = token;
       input_stream >> token;
       sequence_[i][1] = token;
     }
 
   }
-
+//returns size of sequence_
   size_t size() const {
-    // Code missing.
     return size_;
   }
 
