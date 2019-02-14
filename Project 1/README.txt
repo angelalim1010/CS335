@@ -19,5 +19,7 @@ To run with a given file that is redirected to standard input:
 ./test_points2 < test_input_file.txt
 
 What I have completed:
-I've completed the implementing the Big 5 and the overloading operators
+I. All parts of the assignment were completed
 The outputs match the expected outputs
+II. No additional instructions are necessary
+III. A bug I had was that for the one parameter constructor I didn't define size so it was in an infinite loop.
